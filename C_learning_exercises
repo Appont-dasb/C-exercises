@@ -323,7 +323,7 @@ int main()
 // Primes are integers greater than 1
 // If a number can be divisible by a number within half of it (or a number within its square number), then the number is not prime
 // Otherwise it is a prime number
-// function: prime number
+// function: Find prime numbers between n and m and output
 
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
@@ -342,49 +342,19 @@ int fun(int n)
 }
 int main()
 {
-	int x,y=0;
-	int i =0;
-	scanf("%d,%d",&x,&y);
-	for(i=x;i<=y;i++)
+	int x , y =0 ;
+	int i = 0 ;
+	scanf("%d,%d",&x ,&y ) ;
+	for(i=x ; i<=y ; i++)
 	{
-	fun(i);
-		if(fun(i))
-			printf("%d ",i);
+	fun(i) ;
+	if(fun(i))
+	printf("%d ", i) ;
 	}
 }
 
 
-//item Q job
-#define _CRT_SECURE_NO_WARNINGS 1
-#include<stdio.h>
-int fun(int n)
-{
-	
-	int i, x, y ;
-	i = n / 100 ;
-	x = (n-i*100) / 10 ;
-	y = n - i*100 - x*10 ;
-	if ( i*i*i + x*x*x + y*y*y == 1099)
-		return 1 ;
-	else return 0 ;
-
-}
-
-int main()
-{
-	int n = 0 ;
-	int a ;
-	scanf("%d", &n) ;
-	for(a=100 ; a<=n ; a++)
-	{
-		if(fun(a))
-		printf("%d ", a) ;
-	}
-}
-
-
-
-//
+// Ditto another method
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 	int fun (int n)
@@ -418,3 +388,36 @@ int main()
 			printf("%d ", n);
 	}
 }
+
+
+//item Q job
+//function: Find the cubic sum of the numbers between 100 and n equal to the three digits of 1099
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int fun(int n)
+{
+	
+	int i, x, y ;
+	i = n / 100 ;
+	x = (n-i*100) / 10 ;
+	y = n - i*100 - x*10 ;
+	if ( i*i*i + x*x*x + y*y*y == 1099)
+		return 1 ;
+	else return 0 ;
+
+}
+
+int main()
+{
+	int n = 0 ;
+	int a ;
+	scanf("%d", &n) ;
+	for(a=100 ; a<=n ; a++)
+	{
+		if(fun(a))
+		printf("%d ", a) ;
+	}
+}
+
+
+
