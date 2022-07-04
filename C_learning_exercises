@@ -451,3 +451,42 @@ int main()
 	}
 }
 
+
+//Determines whether a number is a square number: if(sqrt(n)==(int)(sqrt(n)))※.
+※※※Mark with flag++.
+//item S job
+//function: Find numbers within 1000 to n that satisfy a particular meaning.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<math.h>
+int fun(int n)
+{
+	int flag = 0 ;
+	int k ;
+	if(sqrt(n)==(int)(sqrt(n))) //※
+	{
+		flag++;
+	}
+	while(n)
+	{
+		k = n % 100 ;
+		if(sqrt(k) == (int)(sqrt(k)))
+		{
+			flag++ ;
+		}
+		n =n/100;
+	}
+	if(flag == 3) return 1 ;
+	else return 0 ;
+}
+int main()
+{
+	int n = 1 ;
+	int i ;
+	scanf("%d", &n ) ;
+	for(i=1000 ; i<=n ; i++)
+	{
+		if(fun(i))
+		printf("%d ", i ) ;
+	}
+ }
