@@ -279,7 +279,7 @@ int main()
 
 
 //item N job
-//Combination of if and for
+//function: Combination of if and for.
 #include<stdio.h>
 int main()
 {
@@ -296,7 +296,7 @@ int main()
 
 
 //item O job 
-//function:Swap the value of the variable
+//function:Swap the value of the variable.
 #include<stdio.h>
 int main()
 {
@@ -323,7 +323,7 @@ int main()
 // Primes are integers greater than 1
 // If a number can be divisible by a number within half of it (or a number within its square number), then the number is not prime
 // Otherwise it is a prime number
-// function: Find prime numbers between n and m and output
+// function: Find prime numbers between n and m and output.
 
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
@@ -391,7 +391,7 @@ int main()
 
 
 //item Q job
-//function: Find the cubic sum of the numbers between 100 and n equal to the three digits of 1099
+//function: Find the cubic sum of the numbers between 100 and n equal to the three digits of 1099.
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 int fun(int n)
@@ -419,5 +419,35 @@ int main()
 	}
 }
 
+//item R job
+//function: Find all complete numbers from 1 to n.
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+int fun(int n)
+{
+	int a,b =0;
+	for (a=1;a<=n;a++)
+	{
+		if(n%a==0)
+		{
+			b+=a;
+		}
+	}
+	if(n*2==b){ return 1;}
+	else{return 0;}
 
+}
+
+int main()
+{
+	int i =0;
+	int n ;
+	scanf("%d",&i);
+	for(n=1;n<=i;n++)
+	{
+		if(fun(n))
+		printf("%d ",n);
+		
+	}
+}
 
