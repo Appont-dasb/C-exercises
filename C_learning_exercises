@@ -508,3 +508,31 @@ int main()
 	printf("ret= %d\n",ret);
 	return 0;
 }
+
+//计算1!+2!+3!+4!+5!+6!+7!+8!+9!+10!
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	int n = 0;
+	int ret = 1;
+	int sum = 0; 
+	
+	for(n=1;n<=10;n++)
+	{
+		ret = 1 ;//!!!!
+		//在这里，如果不写ret=1，那么会出现累乘的结果！
+	    for(i=1 ;i<=n ;i++)
+	    {
+		    ret = ret * i;
+	    }
+	    sum =sum + ret;
+	    
+	    //ret=1*1
+	    //ret=1*1*2
+	    //ret=1*1*2*3//如果不再次写入ret=1，那么将成为：ret=2*1*2*3。
+	    //......
+	}
+	printf("sum= %d",sum);
+	return 0;
+}
