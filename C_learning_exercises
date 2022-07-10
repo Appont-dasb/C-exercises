@@ -536,3 +536,28 @@ int main()
 	printf("sum= %d",sum);
 	return 0;
 }
+
+//对上面的改进
+//可以减少一次循环，达到跟简洁的目的。
+#include<stdio.h>
+int main()
+{
+	int i = 0;
+	int n = 0;
+	int ret = 1;
+	int sum = 0; 
+	
+	for(n=1;n<=10;n++)
+	{
+
+	    ret = ret * n;	    
+	    sum =sum + ret;
+	    
+	    //ret=1*1
+	    //ret=1*1*2
+	    //ret=1*1*2*3
+	    //......
+	}
+	printf("sum= %d",sum);
+	return 0;
+}
