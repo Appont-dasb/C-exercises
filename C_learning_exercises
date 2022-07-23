@@ -1,3 +1,4 @@
+🦈🦈🦈
 //Item A job
 //function: Binary one-time equations（二元一次方程）
 #include<stdio.h>
@@ -278,7 +279,7 @@ int main()
 }
 
 
-//item N job
+//item N job🥱🥱🥱
 //function: Combination of if and for.
 #include<stdio.h>
 int main()
@@ -537,7 +538,7 @@ int main()
 	return 0;
 }
 
-//对上面的改进
+//对上面的改进✨
 //可以减少一次循环，达到跟简洁的目的。
 #include<stdio.h>
 int main()
