@@ -562,3 +562,26 @@ int main()
 	printf("sum= %d",sum);
 	return 0;
 }
+
+
+
+//C语言学习中的练习
+//函数部分
+
+
+void excel(int, int ,int ,int )
+{
+
+}
+int main ()
+{
+	int a = 0 ;
+	int v1 = 0, v2 = 0 ,v3 = 0 ,v4 = 0, v5 = 0, v6 = 0 ;
+
+	excel((v1,v2),(v3,v4),v5,v6); //逗号表达式
+	//（v1 , v2）的结果是后一个，即v2
+	//（v3 , v4）的结果是v4
+	//所以函数调用其实是：excel(v2, v4, v5, v6)
+	//4个实参✨
+	return 0 ;
+}
