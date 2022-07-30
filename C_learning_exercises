@@ -714,3 +714,37 @@ int main()
 	printf("a = %d\nb = %d\nc = %d\n",a,b,c); //9 23 8
 	return 0 ;
 }
+
+
+//计算一个十进制数转换成二进制数后1的个数
+#include<stdlib.h>
+int count_1(unsigned int a) //unsigned int 把有符号数转换成无符号数即可
+{
+	int count = 0 ;
+	while( a ) //不用写a > 0
+	{
+		if(a%2 == 1)
+		{
+			count++ ;	
+		}
+		a = a/2 ;
+	}
+	return count ;
+}
+int main()
+{
+	int a = 0;
+	printf("请输入:>");
+	scanf("%d",&a);
+	
+
+	//像一个十进制数1231，计算有多少个1
+	//是先%10
+	//再/10
+	//反复循环
+	//直到为0
+	printf("%d\n",count_1(a));
+	//写完如下代码，可以不用调节控制台。不建议
+	//system("pause"); //system - 库函数 -执行系统命令 - 暂停
+	return 0 ;
+}
