@@ -716,6 +716,7 @@ int main()
 }
 
 
+//计算一个十进制数转换成二进制数后1的个数
 #include<stdlib.h>
 int count_1( int a) //unsigned int 把有符号数转换成无符号数即可
 {
