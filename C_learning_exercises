@@ -821,3 +821,26 @@ int main()
 	print(a);
 	return 0 ;
 }
+
+
+//用函数实现?*?乘法口诀表
+void print_table(int a)
+{
+	int i = 0 ;
+	for(i = 1; i <= a ; i++) //行
+	{
+		int j = 0;
+		for(j = 1 ; j <= i; j++) //列
+		{
+			printf("%d*%d=%-3d",i,j,i*j);
+		}
+		printf("\n");
+	}
+}
+int main()
+{
+	int a = 0 ;
+	scanf("%d",&a);
+	print_table(a);
+	return 0 ;
+}
