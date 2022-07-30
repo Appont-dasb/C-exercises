@@ -718,17 +718,35 @@ int main()
 
 //计算一个十进制数转换成二进制数后1的个数
 #include<stdlib.h>
-int count_1(unsigned int a) //unsigned int 把有符号数转换成无符号数即可
+int count_1( int a) //unsigned int 把有符号数转换成无符号数即可
 {
+	//方法3，最高效简洁！
 	int count = 0 ;
-	while( a ) //不用写a > 0
+	while(a)
 	{
-		if(a%2 == 1)
-		{
-			count++ ;	
-		}
-		a = a/2 ;
+		a = a&(a-1);
+		count ++;
 	}
+	//方法2
+	//int i = 0 ;
+	//for(i = 0 ; i<32 ; i++)
+	//{
+	//	if( (a >> i) &1 == 1)
+	//	{
+	//		count ++ ;
+	//	}
+	//}
+
+	//方法1
+	//需要将int a 改成 unsigned int a
+	//while( a ) //不用写a > 0
+	//{
+	//	if(a%2 == 1)
+	//	{
+	//		count++ ;	
+	//	}
+	//	a = a/2 ;
+	//}
 	return count ;
 }
 int main()
@@ -736,8 +754,6 @@ int main()
 	int a = 0;
 	printf("请输入:>");
 	scanf("%d",&a);
-	
-
 	//像一个十进制数1231，计算有多少个1
 	//是先%10
 	//再/10
@@ -748,3 +764,5 @@ int main()
 	//system("pause"); //system - 库函数 -执行系统命令 - 暂停
 	return 0 ;
 }
+
+
