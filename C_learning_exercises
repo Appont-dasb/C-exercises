@@ -770,7 +770,7 @@ int main()
 #include<stdio.h>
 
 //两个数的二进制不同位的个数
-// 利用 按位异或 ：相同的位0 ，不同的为1
+//利用 按位异或 ：相同的位0 ，不同的为1
 //再根据上面：计算1个个数
 //即可写出
 int get_diff_bit(int a,int b)
@@ -843,4 +843,46 @@ int main()
 	scanf("%d",&a);
 	print_table(a);
 	return 0 ;
+}
+
+
+//递归的方法实现字符串逆序
+int my_strlen(char arr[])
+{
+	int i = 0 ;
+	int count = 0;
+	while(arr[i] != '\0')
+	{
+		i ++ ; //i++不能忘
+		count ++;
+	}
+	return count ;
+}
+
+//递归✨✨✨
+void reverse_string(char arr[])
+{
+	char tmp = arr[0] ; //把a拿出来
+	int length = my_strlen(arr);
+	arr[0] = arr[length-1];//将a换成f
+	arr[length -1] = '\0'; //将原本f的位置换上\0 - 为了下一步的递归逆序 - 
+
+	//递归必须要有限制条件！！！
+	//if(tmp != 0) //这个条件不对！✨✨
+	//if(length >= 2) // 也不对！这里的length是arr的长度，而不是中间字符的长度
+
+	if(my_strlen(arr+1) >= 2) //需要再次使用strlen函数计算中间字符串长度（末尾的字符已经变成了\0）是否 >= 2时，才需要逆序！！✨
+
+	reverse_string(arr+1);//递归 - 逆序 arr+1代表首元素地址，并且最后一位也被改成了\0 - 即字符串变为："bcde"
+
+	arr[length -1 ] = tmp ; //最后将\0换成a放在末尾✨
+}
+
+int main()
+{
+	char arr[] = "abcdef";
+	printf("%s\n",arr);
+	reverse_string(arr);
+	printf("%s\n",arr);
+	return 0 ; 
 }
